@@ -6,6 +6,7 @@ class Book(models.Model):
     title_hi = models.CharField(max_length=255, verbose_name="Title in Hindi")
 
     class Meta:
+        db_table = 'book'
         verbose_name = "Book"
         verbose_name_plural = "Books"
 
@@ -22,6 +23,7 @@ class Unit(models.Model):
     unit_number = models.IntegerField(verbose_name="Unit Number")
 
     class Meta:
+        db_table = 'unit'
         verbose_name = "Unit"
         verbose_name_plural = "Units"
         constraints = [
@@ -45,6 +47,7 @@ class SubUnit(models.Model):
     subunit_number = models.IntegerField(verbose_name="SubUnit Number")
 
     class Meta:
+        db_table = 'sub_unit'
         verbose_name = "SubUnit"
         verbose_name_plural = "SubUnits"
         constraints = [
@@ -70,6 +73,7 @@ class Question(models.Model):
     reported = models.BooleanField(default=False, verbose_name="Is Reported")
 
     class Meta:
+        db_table = 'question'
         verbose_name = "Question"
         verbose_name_plural = "Questions"
 
@@ -89,6 +93,7 @@ class Choice(models.Model):
     is_correct = models.BooleanField(verbose_name="Is Correct Choice")
 
     class Meta:
+        db_table = 'choice'
         verbose_name = "Choice"
         verbose_name_plural = "Choices"
 
@@ -108,6 +113,7 @@ class ReportedQuestion(models.Model):
     resolved = models.BooleanField(default=False, verbose_name="Is Resolved")
 
     class Meta:
+        db_table = 'reported_question'
         verbose_name = "Reported Question"
         verbose_name_plural = "Reported Questions"
 
